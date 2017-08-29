@@ -5,7 +5,7 @@ grammar Zish;
 // note that EOF is a concept for the grammar, technically Zish streams
 // are infinite
 start
-    : element (WS+ element)* EOF
+    : element EOF
     ;
 
 element

@@ -3,10 +3,10 @@
 
 A Python 3 library for the https://github.com/tlocke/zish[Zish] format,
 released under the
-https://github.com/tlocke/zish/blob/master/LICENSE[MIT Licence].
+https://github.com/tlocke/zish_python_antlr/blob/master/LICENSE[MIT Licence].
 
-image:https://travis-ci.org/tlocke/zish.svg?branch=master["Build Status",
-link="https://travis-ci.org/tlocke/zish"]
+image:https://travis-ci.org/tlocke/zish_python_antlr.svg?branch=master["Build
+Status", link="https://travis-ci.org/tlocke/zish"]
 
 
 === Installation
@@ -167,7 +167,7 @@ Useful links:
 
 To run the tests:
 
-* Change to the `zish/python_antlr` directory: `cd zish/python_antlr`
+* Change to the `zish_python_antlr` directory: `cd zish_python_antlr`
 * Create a virtual environment: `virtualenv --python=python3 venv`
 * Activate the virtual environment: `source venv/bin/activate`
 * Install tox: `pip install tox`
