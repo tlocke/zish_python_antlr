@@ -5,12 +5,12 @@ import versioneer
 
 
 setup(
-    name='zish',
+    name='zish_antlr',
     version=versioneer.get_version(),
     description='A Python 3 library for the Zish format.',
     author='Tony Locke',
     author_email='tlocke@tlocke.org.uk',
-    url='https://github.com/tlocke/zish',
+    url='https://github.com/tlocke/zish_python_antlr',
     cmdclass=versioneer.get_cmdclass(),
     packages=[
         'zish', 'zish.antlr'],
