@@ -105,6 +105,11 @@ A Hero of Our Time
 === Release Notes
 
 
+==== Version 0.0.11 (2017-09-07)
+
+* Upload to PyPI failed for previous release.
+
+
 ==== Version 0.0.10 (2017-09-07)
 
 * Allow lists and sets as keys to maps.
