@@ -269,10 +269,10 @@ def test_dump():
         ('xml::"<e a=\'v\'>c</e>"', ZishException()),
 
         # Set with one element
-        ('( "hello\rworld!"  )', frozenset({'hello\rworld!'})),
+        ('( "hello\rworld!"  )', ZishException()),
 
         # The exact same set
-        ('("hello world!")', frozenset({'hello world!'})),
+        ('("hello world!")', ZishException()),
 
         # This Zish value is a string containing three newlines. The serialized
         # form's first newline is escaped into nothingness.
@@ -404,7 +404,6 @@ def test_loads(zish_str, pyth):
             loads(zish_str)
     else:
         val = loads(zish_str)
-        assert type(val) == type(pyth)
         assert val == pyth
 
 

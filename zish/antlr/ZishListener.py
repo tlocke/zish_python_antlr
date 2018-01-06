@@ -35,15 +35,6 @@ class ZishListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by ZishParser#set_type.
-    def enterSet_type(self, ctx:ZishParser.Set_typeContext):
-        pass
-
-    # Exit a parse tree produced by ZishParser#set_type.
-    def exitSet_type(self, ctx:ZishParser.Set_typeContext):
-        pass
-
-
     # Enter a parse tree produced by ZishParser#map_type.
     def enterMap_type(self, ctx:ZishParser.Map_typeContext):
         pass
@@ -59,15 +50,6 @@ class ZishListener(ParseTreeListener):
 
     # Exit a parse tree produced by ZishParser#pair.
     def exitPair(self, ctx:ZishParser.PairContext):
-        pass
-
-
-    # Enter a parse tree produced by ZishParser#key.
-    def enterKey(self, ctx:ZishParser.KeyContext):
-        pass
-
-    # Exit a parse tree produced by ZishParser#key.
-    def exitKey(self, ctx:ZishParser.KeyContext):
         pass
 
 

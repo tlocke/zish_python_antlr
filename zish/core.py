@@ -49,6 +49,29 @@ def loads(zish_str):
     return parse(tree)
 
 
+class ImmutableDict(Mapping):
+    def __init__(self, somedict):
+        self._dict = dict(somedict)
+        self._hash = None
+
+    def __getitem__(self, key):
+        return self._dict[key]
+
+    def __len__(self):
+        return len(self._dict)
+
+    def __iter__(self):
+        return iter(self._dict)
+
+    def __hash__(self):
+        if self._hash is None:
+            self._hash = hash(frozenset(self._dict.items()))
+        return self._hash
+
+    def __eq__(self, other):
+        return self._dict == other
+
+
 def parse(node):
     # print("parse start")
     # print(str(type(node)))
@@ -57,30 +80,21 @@ def parse(node):
         val = {}
         for child in node.getChildren():
             if isinstance(child, ZishParser.PairContext):
-                for c in child.getChildren():
-                    if isinstance(c, ZishParser.KeyContext):
-                        k = parse(c)
-                    elif isinstance(c, ZishParser.ElementContext):
-                        v = parse(c)
+                k, v = [
+                    parse(c) for c in child.getChildren() if
+                    isinstance(c, ZishParser.ElementContext)]
                 val[k] = v
-        return val
+        return ImmutableDict(val)
+
     elif isinstance(node, ZishParser.List_typeContext):
         val = []
         for child in node.getChildren():
             if isinstance(child, ZishParser.ElementContext):
                 val.append(parse(child))
         return tuple(val)
-    elif isinstance(node, ZishParser.Set_typeContext):
-        val = []
-        for child in node.getChildren():
-            if isinstance(child, ZishParser.KeyContext):
-                val.append(parse(child))
-        return frozenset(val)
+
     elif isinstance(
-            node, (
-                ZishParser.StartContext,
-                ZishParser.KeyContext,
-                ZishParser.ElementContext)):
+            node, (ZishParser.StartContext, ZishParser.ElementContext)):
 
         for c in node.getChildren():
             if isinstance(c, TerminalNodeImpl) and \

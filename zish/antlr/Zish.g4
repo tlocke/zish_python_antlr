@@ -2,14 +2,20 @@
 
 grammar Zish;
 
-// note that EOF is a concept for the grammar, technically Zish streams
-// are infinite
 start
     : element EOF
     ;
 
 element
-    : key
+    : BOOL
+    | NULL
+    | TIMESTAMP
+    | INTEGER
+    | FLOAT
+    | DECIMAL
+    | STRING
+    | BLOB
+    | list_type
     | map_type
     ;
 
@@ -24,19 +30,6 @@ LIST_START
 
 LIST_FINISH
     : ']'
-    ;
-
-set_type
-    : SET_START key (COMMA key)* SET_FINISH
-    | SET_START SET_FINISH
-    ;
-
-SET_START
-    : '('
-    ;
-
-SET_FINISH
-    : ')'
     ;
 
 COMMA
@@ -57,24 +50,11 @@ MAP_FINISH
     ;
 
 pair
-    : key COLON element
+    : element COLON element
     ;
 
 COLON
     : ':'
-    ;
-
-key
-    : BOOL
-    | NULL
-    | TIMESTAMP
-    | INTEGER
-    | FLOAT
-    | DECIMAL
-    | STRING
-    | BLOB
-    | set_type
-    | list_type
     ;
 
 WS
