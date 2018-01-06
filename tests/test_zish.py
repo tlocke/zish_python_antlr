@@ -196,21 +196,21 @@ def test_dump():
         # Type is decimal
         ('0.123', Decimal('0.123')),
 
-        # Type is float
-        ('-0.12e4', -0.12e4),
+        # Error: The exponent can't have 'd' in it.
+        ('-0.12d4', ZishException()),
 
         # Type is decimal
-        ('-0.12d4', Decimal('-0.12e4')),
+        ('-0.12e4', Decimal('-0.12e4')),
 
-        # Zero as float
-        ('0e0', float(0)),
+        # Zero as decimal
+        ('0e0', Decimal('0')),
 
         # Error: Zero as float can't have uppercase 'E' in exponent.
         ('0E0', ZishException()),
 
 
-        # Zero as decimal
-        ('0d0', Decimal('0')),
+        # Error: Zero can't have 'd' in the exponent.
+        ('0d0', ZishException()),
 
         # Error: Zero as decimal can't have uppercase 'D' in exponent.
         ('0D0', ZishException()),
@@ -218,17 +218,17 @@ def test_dump():
         #   ...the same value with different notation
         ('0.', Decimal('0')),
 
-        # Negative zero float   (distinct from positive zero)
-        ('-0e0', float(-0)),
-
         # Negative zero decimal (distinct from positive zero)
-        ('-0d0', Decimal('-0')),
+        ('-0e0', Decimal('-0')),
+
+        # Error: Negative zero decimal can't have 'd' in the exponent.
+        ('-0d0', ZishException()),
 
         #   ...the same value with different notation
         ('-0.', Decimal('-0')),
 
         # Decimal maintains precision: -0. != -0.0
-        ('-0d-1', Decimal('-0.0')),
+        ('-0e-1', Decimal('-0.0')),
 
         # Error: Decimal can't have underscores
         ('123_456.789_012', ZishException()),
@@ -432,7 +432,7 @@ def test_loads(zish_str, pyth):
     "novel",
     "19th centuary"],
   "title": "A Hero of Our Time",
-  "weight": 6.88e0,
+  "weight": 6.88,
   "would_recommend": true}"""),
 
         ((), '[]'),

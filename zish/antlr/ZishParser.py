@@ -7,29 +7,28 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21")
-        buf.write(">\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2")
-        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\32\n\3\3")
-        buf.write("\4\3\4\3\4\3\4\7\4 \n\4\f\4\16\4#\13\4\3\4\3\4\3\4\3\4")
-        buf.write("\5\4)\n\4\3\5\3\5\3\5\3\5\7\5/\n\5\f\5\16\5\62\13\5\3")
-        buf.write("\5\3\5\3\5\3\5\5\58\n\5\3\6\3\6\3\6\3\6\3\6\2\2\7\2\4")
-        buf.write("\6\b\n\2\2\2E\2\f\3\2\2\2\4\31\3\2\2\2\6(\3\2\2\2\b\67")
-        buf.write("\3\2\2\2\n9\3\2\2\2\f\r\5\4\3\2\r\16\7\2\2\3\16\3\3\2")
-        buf.write("\2\2\17\32\7\13\2\2\20\32\7\n\2\2\21\32\7\f\2\2\22\32")
-        buf.write("\7\r\2\2\23\32\7\17\2\2\24\32\7\16\2\2\25\32\7\20\2\2")
-        buf.write("\26\32\7\21\2\2\27\32\5\6\4\2\30\32\5\b\5\2\31\17\3\2")
-        buf.write("\2\2\31\20\3\2\2\2\31\21\3\2\2\2\31\22\3\2\2\2\31\23\3")
-        buf.write("\2\2\2\31\24\3\2\2\2\31\25\3\2\2\2\31\26\3\2\2\2\31\27")
-        buf.write("\3\2\2\2\31\30\3\2\2\2\32\5\3\2\2\2\33\34\7\3\2\2\34!")
-        buf.write("\5\4\3\2\35\36\7\5\2\2\36 \5\4\3\2\37\35\3\2\2\2 #\3\2")
-        buf.write("\2\2!\37\3\2\2\2!\"\3\2\2\2\"$\3\2\2\2#!\3\2\2\2$%\7\4")
-        buf.write("\2\2%)\3\2\2\2&\'\7\3\2\2\')\7\4\2\2(\33\3\2\2\2(&\3\2")
-        buf.write("\2\2)\7\3\2\2\2*+\7\6\2\2+\60\5\n\6\2,-\7\5\2\2-/\5\n")
-        buf.write("\6\2.,\3\2\2\2/\62\3\2\2\2\60.\3\2\2\2\60\61\3\2\2\2\61")
-        buf.write("\63\3\2\2\2\62\60\3\2\2\2\63\64\7\7\2\2\648\3\2\2\2\65")
-        buf.write("\66\7\6\2\2\668\7\7\2\2\67*\3\2\2\2\67\65\3\2\2\28\t\3")
-        buf.write("\2\2\29:\5\4\3\2:;\7\b\2\2;<\5\4\3\2<\13\3\2\2\2\7\31")
-        buf.write("!(\60\67")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\20")
+        buf.write("=\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2")
+        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\31\n\3\3\4\3")
+        buf.write("\4\3\4\3\4\7\4\37\n\4\f\4\16\4\"\13\4\3\4\3\4\3\4\3\4")
+        buf.write("\5\4(\n\4\3\5\3\5\3\5\3\5\7\5.\n\5\f\5\16\5\61\13\5\3")
+        buf.write("\5\3\5\3\5\3\5\5\5\67\n\5\3\6\3\6\3\6\3\6\3\6\2\2\7\2")
+        buf.write("\4\6\b\n\2\2\2C\2\f\3\2\2\2\4\30\3\2\2\2\6\'\3\2\2\2\b")
+        buf.write("\66\3\2\2\2\n8\3\2\2\2\f\r\5\4\3\2\r\16\7\2\2\3\16\3\3")
+        buf.write("\2\2\2\17\31\7\13\2\2\20\31\7\n\2\2\21\31\7\f\2\2\22\31")
+        buf.write("\7\r\2\2\23\31\7\16\2\2\24\31\7\17\2\2\25\31\7\20\2\2")
+        buf.write("\26\31\5\6\4\2\27\31\5\b\5\2\30\17\3\2\2\2\30\20\3\2\2")
+        buf.write("\2\30\21\3\2\2\2\30\22\3\2\2\2\30\23\3\2\2\2\30\24\3\2")
+        buf.write("\2\2\30\25\3\2\2\2\30\26\3\2\2\2\30\27\3\2\2\2\31\5\3")
+        buf.write("\2\2\2\32\33\7\3\2\2\33 \5\4\3\2\34\35\7\5\2\2\35\37\5")
+        buf.write("\4\3\2\36\34\3\2\2\2\37\"\3\2\2\2 \36\3\2\2\2 !\3\2\2")
+        buf.write("\2!#\3\2\2\2\" \3\2\2\2#$\7\4\2\2$(\3\2\2\2%&\7\3\2\2")
+        buf.write("&(\7\4\2\2\'\32\3\2\2\2\'%\3\2\2\2(\7\3\2\2\2)*\7\6\2")
+        buf.write("\2*/\5\n\6\2+,\7\5\2\2,.\5\n\6\2-+\3\2\2\2.\61\3\2\2\2")
+        buf.write("/-\3\2\2\2/\60\3\2\2\2\60\62\3\2\2\2\61/\3\2\2\2\62\63")
+        buf.write("\7\7\2\2\63\67\3\2\2\2\64\65\7\6\2\2\65\67\7\7\2\2\66")
+        buf.write(")\3\2\2\2\66\64\3\2\2\2\67\t\3\2\2\289\5\4\3\29:\7\b\2")
+        buf.write("\2:;\5\4\3\2;\13\3\2\2\2\7\30 \'/\66")
         return buf.getvalue()
 
 
@@ -48,8 +47,8 @@ class ZishParser ( Parser ):
 
     symbolicNames = [ "<INVALID>", "LIST_START", "LIST_FINISH", "COMMA", 
                       "MAP_START", "MAP_FINISH", "COLON", "WS", "NULL", 
-                      "BOOL", "TIMESTAMP", "INTEGER", "DECIMAL", "FLOAT", 
-                      "STRING", "BLOB" ]
+                      "BOOL", "TIMESTAMP", "INTEGER", "DECIMAL", "STRING", 
+                      "BLOB" ]
 
     RULE_start = 0
     RULE_element = 1
@@ -72,9 +71,8 @@ class ZishParser ( Parser ):
     TIMESTAMP=10
     INTEGER=11
     DECIMAL=12
-    FLOAT=13
-    STRING=14
-    BLOB=15
+    STRING=13
+    BLOB=14
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -147,9 +145,6 @@ class ZishParser ( Parser ):
         def INTEGER(self):
             return self.getToken(ZishParser.INTEGER, 0)
 
-        def FLOAT(self):
-            return self.getToken(ZishParser.FLOAT, 0)
-
         def DECIMAL(self):
             return self.getToken(ZishParser.DECIMAL, 0)
 
@@ -186,7 +181,7 @@ class ZishParser ( Parser ):
         localctx = ZishParser.ElementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_element)
         try:
-            self.state = 23
+            self.state = 22
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [ZishParser.BOOL]:
@@ -209,34 +204,29 @@ class ZishParser ( Parser ):
                 self.state = 16
                 self.match(ZishParser.INTEGER)
                 pass
-            elif token in [ZishParser.FLOAT]:
+            elif token in [ZishParser.DECIMAL]:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 17
-                self.match(ZishParser.FLOAT)
-                pass
-            elif token in [ZishParser.DECIMAL]:
-                self.enterOuterAlt(localctx, 6)
-                self.state = 18
                 self.match(ZishParser.DECIMAL)
                 pass
             elif token in [ZishParser.STRING]:
-                self.enterOuterAlt(localctx, 7)
-                self.state = 19
+                self.enterOuterAlt(localctx, 6)
+                self.state = 18
                 self.match(ZishParser.STRING)
                 pass
             elif token in [ZishParser.BLOB]:
-                self.enterOuterAlt(localctx, 8)
-                self.state = 20
+                self.enterOuterAlt(localctx, 7)
+                self.state = 19
                 self.match(ZishParser.BLOB)
                 pass
             elif token in [ZishParser.LIST_START]:
-                self.enterOuterAlt(localctx, 9)
-                self.state = 21
+                self.enterOuterAlt(localctx, 8)
+                self.state = 20
                 self.list_type()
                 pass
             elif token in [ZishParser.MAP_START]:
-                self.enterOuterAlt(localctx, 10)
-                self.state = 22
+                self.enterOuterAlt(localctx, 9)
+                self.state = 21
                 self.map_type()
                 pass
             else:
@@ -295,36 +285,36 @@ class ZishParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_list_type)
         self._la = 0 # Token type
         try:
-            self.state = 38
+            self.state = 37
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 25
+                self.state = 24
                 self.match(ZishParser.LIST_START)
-                self.state = 26
+                self.state = 25
                 self.element()
-                self.state = 31
+                self.state = 30
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==ZishParser.COMMA:
-                    self.state = 27
+                    self.state = 26
                     self.match(ZishParser.COMMA)
-                    self.state = 28
+                    self.state = 27
                     self.element()
-                    self.state = 33
+                    self.state = 32
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 34
+                self.state = 33
                 self.match(ZishParser.LIST_FINISH)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 36
+                self.state = 35
                 self.match(ZishParser.LIST_START)
-                self.state = 37
+                self.state = 36
                 self.match(ZishParser.LIST_FINISH)
                 pass
 
@@ -382,36 +372,36 @@ class ZishParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_map_type)
         self._la = 0 # Token type
         try:
-            self.state = 53
+            self.state = 52
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 40
+                self.state = 39
                 self.match(ZishParser.MAP_START)
-                self.state = 41
+                self.state = 40
                 self.pair()
-                self.state = 46
+                self.state = 45
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==ZishParser.COMMA:
-                    self.state = 42
+                    self.state = 41
                     self.match(ZishParser.COMMA)
-                    self.state = 43
+                    self.state = 42
                     self.pair()
-                    self.state = 48
+                    self.state = 47
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 49
+                self.state = 48
                 self.match(ZishParser.MAP_FINISH)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 51
+                self.state = 50
                 self.match(ZishParser.MAP_START)
-                self.state = 52
+                self.state = 51
                 self.match(ZishParser.MAP_FINISH)
                 pass
 
@@ -460,11 +450,11 @@ class ZishParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_pair)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 55
+            self.state = 54
             self.element()
-            self.state = 56
+            self.state = 55
             self.match(ZishParser.COLON)
-            self.state = 57
+            self.state = 56
             self.element()
         except RecognitionException as re:
             localctx.exception = re

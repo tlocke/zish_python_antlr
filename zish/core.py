@@ -124,10 +124,7 @@ def parse(node):
             return int(token.text)
 
         elif token_type == ZishParser.DECIMAL:
-            return Decimal(token.text.replace('d', 'e'))
-
-        elif token_type == ZishParser.FLOAT:
-            return float(token.text)
+            return Decimal(token.text)
 
         elif token_type == ZishParser.STRING:
             return unescape(token.text[1:-1])
@@ -204,16 +201,8 @@ def _dump(obj, indent):
         new_indent = indent + '  '
         b = ','.join('\n' + new_indent + _dump(v, new_indent) for v in obj)
         return '[' + b + ']'
-    elif isinstance(obj, int):
+    elif isinstance(obj, (int, float, Decimal)):
         return str(obj)
-    elif isinstance(obj, float):
-        val = str(obj)
-        if 'e' not in val:
-            return val + 'e0'
-        else:
-            return val
-    elif isinstance(obj, Decimal):
-        return str(obj).replace('e', 'd')
     elif obj is None:
         return 'null'
     elif isinstance(obj, str):
