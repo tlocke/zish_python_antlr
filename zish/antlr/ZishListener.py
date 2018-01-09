@@ -26,6 +26,15 @@ class ZishListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by ZishParser#key.
+    def enterKey(self, ctx:ZishParser.KeyContext):
+        pass
+
+    # Exit a parse tree produced by ZishParser#key.
+    def exitKey(self, ctx:ZishParser.KeyContext):
+        pass
+
+
     # Enter a parse tree produced by ZishParser#list_type.
     def enterList_type(self, ctx:ZishParser.List_typeContext):
         pass
