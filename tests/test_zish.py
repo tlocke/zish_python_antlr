@@ -205,8 +205,8 @@ def test_dump():
         # Zero as decimal
         ('0e0', Decimal('0')),
 
-        # Error: Zero as float can't have uppercase 'E' in exponent.
-        ('0E0', ZishException()),
+        # Zero as float with uppercase 'E' in exponent.
+        ('0E0', Decimal('0')),
 
 
         # Error: Zero can't have 'd' in the exponent.
