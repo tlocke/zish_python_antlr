@@ -8,25 +8,26 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\20")
-        buf.write(";\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2")
-        buf.write("\3\2\3\2\3\3\3\3\3\3\5\3\25\n\3\3\4\3\4\3\5\3\5\3\5\3")
-        buf.write("\5\7\5\35\n\5\f\5\16\5 \13\5\3\5\3\5\3\5\3\5\5\5&\n\5")
-        buf.write("\3\6\3\6\3\6\3\6\7\6,\n\6\f\6\16\6/\13\6\3\6\3\6\3\6\3")
-        buf.write("\6\5\6\65\n\6\3\7\3\7\3\7\3\7\3\7\2\2\b\2\4\6\b\n\f\2")
-        buf.write("\3\3\2\n\20\2:\2\16\3\2\2\2\4\24\3\2\2\2\6\26\3\2\2\2")
-        buf.write("\b%\3\2\2\2\n\64\3\2\2\2\f\66\3\2\2\2\16\17\5\4\3\2\17")
-        buf.write("\20\7\2\2\3\20\3\3\2\2\2\21\25\5\6\4\2\22\25\5\b\5\2\23")
-        buf.write("\25\5\n\6\2\24\21\3\2\2\2\24\22\3\2\2\2\24\23\3\2\2\2")
-        buf.write("\25\5\3\2\2\2\26\27\t\2\2\2\27\7\3\2\2\2\30\31\7\3\2\2")
-        buf.write("\31\36\5\4\3\2\32\33\7\5\2\2\33\35\5\4\3\2\34\32\3\2\2")
-        buf.write("\2\35 \3\2\2\2\36\34\3\2\2\2\36\37\3\2\2\2\37!\3\2\2\2")
-        buf.write(" \36\3\2\2\2!\"\7\4\2\2\"&\3\2\2\2#$\7\3\2\2$&\7\4\2\2")
-        buf.write("%\30\3\2\2\2%#\3\2\2\2&\t\3\2\2\2\'(\7\6\2\2(-\5\f\7\2")
-        buf.write(")*\7\5\2\2*,\5\f\7\2+)\3\2\2\2,/\3\2\2\2-+\3\2\2\2-.\3")
-        buf.write("\2\2\2.\60\3\2\2\2/-\3\2\2\2\60\61\7\7\2\2\61\65\3\2\2")
-        buf.write("\2\62\63\7\6\2\2\63\65\7\7\2\2\64\'\3\2\2\2\64\62\3\2")
-        buf.write("\2\2\65\13\3\2\2\2\66\67\5\6\4\2\678\7\b\2\289\5\4\3\2")
-        buf.write("9\r\3\2\2\2\7\24\36%-\64")
+        buf.write("<\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2")
+        buf.write("\3\2\3\2\3\3\3\3\3\3\3\3\5\3\26\n\3\3\4\3\4\3\5\3\5\3")
+        buf.write("\5\3\5\7\5\36\n\5\f\5\16\5!\13\5\3\5\3\5\3\5\3\5\5\5\'")
+        buf.write("\n\5\3\6\3\6\3\6\3\6\7\6-\n\6\f\6\16\6\60\13\6\3\6\3\6")
+        buf.write("\3\6\3\6\5\6\66\n\6\3\7\3\7\3\7\3\7\3\7\2\2\b\2\4\6\b")
+        buf.write("\n\f\2\3\3\2\13\20\2<\2\16\3\2\2\2\4\25\3\2\2\2\6\27\3")
+        buf.write("\2\2\2\b&\3\2\2\2\n\65\3\2\2\2\f\67\3\2\2\2\16\17\5\4")
+        buf.write("\3\2\17\20\7\2\2\3\20\3\3\2\2\2\21\26\5\6\4\2\22\26\5")
+        buf.write("\b\5\2\23\26\5\n\6\2\24\26\7\n\2\2\25\21\3\2\2\2\25\22")
+        buf.write("\3\2\2\2\25\23\3\2\2\2\25\24\3\2\2\2\26\5\3\2\2\2\27\30")
+        buf.write("\t\2\2\2\30\7\3\2\2\2\31\32\7\3\2\2\32\37\5\4\3\2\33\34")
+        buf.write("\7\5\2\2\34\36\5\4\3\2\35\33\3\2\2\2\36!\3\2\2\2\37\35")
+        buf.write("\3\2\2\2\37 \3\2\2\2 \"\3\2\2\2!\37\3\2\2\2\"#\7\4\2\2")
+        buf.write("#\'\3\2\2\2$%\7\3\2\2%\'\7\4\2\2&\31\3\2\2\2&$\3\2\2\2")
+        buf.write("\'\t\3\2\2\2()\7\6\2\2).\5\f\7\2*+\7\5\2\2+-\5\f\7\2,")
+        buf.write("*\3\2\2\2-\60\3\2\2\2.,\3\2\2\2./\3\2\2\2/\61\3\2\2\2")
+        buf.write("\60.\3\2\2\2\61\62\7\7\2\2\62\66\3\2\2\2\63\64\7\6\2\2")
+        buf.write("\64\66\7\7\2\2\65(\3\2\2\2\65\63\3\2\2\2\66\13\3\2\2\2")
+        buf.write("\678\5\6\4\289\7\b\2\29:\5\4\3\2:\r\3\2\2\2\7\25\37&.")
+        buf.write("\65")
         return buf.getvalue()
 
 
@@ -144,6 +145,9 @@ class ZishParser ( Parser ):
             return self.getTypedRuleContext(ZishParser.Map_typeContext,0)
 
 
+        def NULL(self):
+            return self.getToken(ZishParser.NULL, 0)
+
         def getRuleIndex(self):
             return ZishParser.RULE_element
 
@@ -163,10 +167,10 @@ class ZishParser ( Parser ):
         localctx = ZishParser.ElementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_element)
         try:
-            self.state = 18
+            self.state = 19
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [ZishParser.NULL, ZishParser.BOOL, ZishParser.TIMESTAMP, ZishParser.INTEGER, ZishParser.DECIMAL, ZishParser.STRING, ZishParser.BLOB]:
+            if token in [ZishParser.BOOL, ZishParser.TIMESTAMP, ZishParser.INTEGER, ZishParser.DECIMAL, ZishParser.STRING, ZishParser.BLOB]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 15
                 self.key()
@@ -180,6 +184,11 @@ class ZishParser ( Parser ):
                 self.enterOuterAlt(localctx, 3)
                 self.state = 17
                 self.map_type()
+                pass
+            elif token in [ZishParser.NULL]:
+                self.enterOuterAlt(localctx, 4)
+                self.state = 18
+                self.match(ZishParser.NULL)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -200,9 +209,6 @@ class ZishParser ( Parser ):
 
         def BOOL(self):
             return self.getToken(ZishParser.BOOL, 0)
-
-        def NULL(self):
-            return self.getToken(ZishParser.NULL, 0)
 
         def TIMESTAMP(self):
             return self.getToken(ZishParser.TIMESTAMP, 0)
@@ -240,9 +246,9 @@ class ZishParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 20
+            self.state = 21
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ZishParser.NULL) | (1 << ZishParser.BOOL) | (1 << ZishParser.TIMESTAMP) | (1 << ZishParser.INTEGER) | (1 << ZishParser.DECIMAL) | (1 << ZishParser.STRING) | (1 << ZishParser.BLOB))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ZishParser.BOOL) | (1 << ZishParser.TIMESTAMP) | (1 << ZishParser.INTEGER) | (1 << ZishParser.DECIMAL) | (1 << ZishParser.STRING) | (1 << ZishParser.BLOB))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -300,36 +306,36 @@ class ZishParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_list_type)
         self._la = 0 # Token type
         try:
-            self.state = 35
+            self.state = 36
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 22
-                self.match(ZishParser.LIST_START)
                 self.state = 23
+                self.match(ZishParser.LIST_START)
+                self.state = 24
                 self.element()
-                self.state = 28
+                self.state = 29
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==ZishParser.COMMA:
-                    self.state = 24
-                    self.match(ZishParser.COMMA)
                     self.state = 25
+                    self.match(ZishParser.COMMA)
+                    self.state = 26
                     self.element()
-                    self.state = 30
+                    self.state = 31
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 31
+                self.state = 32
                 self.match(ZishParser.LIST_FINISH)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 33
-                self.match(ZishParser.LIST_START)
                 self.state = 34
+                self.match(ZishParser.LIST_START)
+                self.state = 35
                 self.match(ZishParser.LIST_FINISH)
                 pass
 
@@ -387,36 +393,36 @@ class ZishParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_map_type)
         self._la = 0 # Token type
         try:
-            self.state = 50
+            self.state = 51
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 37
-                self.match(ZishParser.MAP_START)
                 self.state = 38
+                self.match(ZishParser.MAP_START)
+                self.state = 39
                 self.pair()
-                self.state = 43
+                self.state = 44
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==ZishParser.COMMA:
-                    self.state = 39
-                    self.match(ZishParser.COMMA)
                     self.state = 40
+                    self.match(ZishParser.COMMA)
+                    self.state = 41
                     self.pair()
-                    self.state = 45
+                    self.state = 46
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 46
+                self.state = 47
                 self.match(ZishParser.MAP_FINISH)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 48
-                self.match(ZishParser.MAP_START)
                 self.state = 49
+                self.match(ZishParser.MAP_START)
+                self.state = 50
                 self.match(ZishParser.MAP_FINISH)
                 pass
 
@@ -466,11 +472,11 @@ class ZishParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_pair)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 52
-            self.key()
             self.state = 53
-            self.match(ZishParser.COLON)
+            self.key()
             self.state = 54
+            self.match(ZishParser.COLON)
+            self.state = 55
             self.element()
         except RecognitionException as re:
             localctx.exception = re
