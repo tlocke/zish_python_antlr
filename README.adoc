@@ -131,8 +131,11 @@ and download the ANTLR jar and then run the following command:
 
 ==== Making A New Release
 
-Run `tox` to make sure all tests pass, then update the `Release Notes` section
-then do:
+* Run `tox` to make sure all tests pass
+* Update the `Release Notes` section.
+* Ensure `wheel` and `twine` are installed: `pip install wheel twine`
+
+Then do:
 
 ....
 git tag -a x.y.z -m "version x.y.z"
