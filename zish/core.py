@@ -11,7 +11,7 @@ from datetime import datetime as Datetime, timezone as Timezone
 
 
 QUOTE = '"'
-UTC_FORMAT = '%Y-%m-%dT%H:%M:%SZ'
+UTC_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
 
 class ZishException(Exception):
@@ -20,8 +20,7 @@ class ZishException(Exception):
 
 class ThrowingErrorListener(ErrorListener.ErrorListener):
     def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
-        raise Errors.ParseCancellationException(
-            "line " + str(line) + ":" + str(column) + " " + msg)
+        raise Errors.ParseCancellationException(f"line {line}: {column} {msg}")
 
 
 def load(file_like):
@@ -58,9 +57,10 @@ def parse(node):
         for child in node.getChildren():
             if isinstance(child, ZishParser.PairContext):
                 k, v = [
-                    parse(c) for c in child.getChildren() if
-                    isinstance(
-                        c, (ZishParser.ElementContext, ZishParser.KeyContext))]
+                    parse(c)
+                    for c in child.getChildren()
+                    if isinstance(c, (ZishParser.ElementContext, ZishParser.KeyContext))
+                ]
                 val[k] = v
         return val
 
@@ -72,13 +72,15 @@ def parse(node):
         return tuple(val)
 
     elif isinstance(
-            node, (
-                ZishParser.StartContext, ZishParser.ElementContext,
-                ZishParser.KeyContext)):
+        node,
+        (ZishParser.StartContext, ZishParser.ElementContext, ZishParser.KeyContext),
+    ):
 
         for c in node.getChildren():
-            if isinstance(c, TerminalNodeImpl) and \
-                    c.getPayload().type == ZishParser.EOF:
+            if (
+                isinstance(c, TerminalNodeImpl)
+                and c.getPayload().type == ZishParser.EOF
+            ):
                 continue
             return parse(c)
 
@@ -91,14 +93,13 @@ def parse(node):
             try:
                 return arrow.get(token_text).datetime
             except arrow.parser.ParserError as e:
-                raise ZishException(
-                    "Can't parse the timestamp '" + token.text + "'.") from e
+                raise ZishException(f"Can't parse the timestamp '{token.text}'.") from e
 
         elif token_type == ZishParser.NULL:
             return None
 
         elif token_type == ZishParser.BOOL:
-            return token.text == 'true'
+            return token.text == "true"
 
         elif token_type == ZishParser.INTEGER:
             return int(token.text)
@@ -113,89 +114,90 @@ def parse(node):
             return b64decode(token.text)
 
         else:
-            raise ZishException(
-                "Don't recognize the token type: " + str(token_type) + ".")
+            raise ZishException(f"Don't recognize the token type: {token_type}.")
     else:
         raise ZishException(
-            "Don't know what to do with type " + str(type(node)) +
-            " with value " + str(node) + ".")
+            f"Don't know what to do with type {type(node)} with value {node}."
+        )
 
 
 ESCAPES = {
-    '0': '\u0000',   # NUL
-    'a': '\u0007',   # alert BEL
-    'b': '\u0008',   # backspace BS
-    't': '\u0009',   # horizontal tab HT
-    'n': '\u000A',   # linefeed LF
-    'f': '\u000C',   # form feed FF
-    'r': '\u000D',   # carriage return CR
-    'v': '\u000B',   # vertical tab VT
-    '"': '\u0022',   # double quote
-    "'": '\u0027',   # single quote
-    '?': '\u003F',   # question mark
-    '\\': '\u005C',  # backslash
-    '/': '\u002F',   # forward slash
-    '\u000D\u000A': '',  # empty string
-    '\u000D': '',  # empty string
-    '\u000A': ''}  # empty string
+    "0": "\u0000",  # NUL
+    "a": "\u0007",  # alert BEL
+    "b": "\u0008",  # backspace BS
+    "t": "\u0009",  # horizontal tab HT
+    "n": "\u000A",  # linefeed LF
+    "f": "\u000C",  # form feed FF
+    "r": "\u000D",  # carriage return CR
+    "v": "\u000B",  # vertical tab VT
+    '"': "\u0022",  # double quote
+    "'": "\u0027",  # single quote
+    "?": "\u003F",  # question mark
+    "\\": "\u005C",  # backslash
+    "/": "\u002F",  # forward slash
+    "\u000D\u000A": "",  # empty string
+    "\u000D": "",  # empty string
+    "\u000A": "",
+}  # empty string
 
 
 def unescape(escaped_str):
-    i = escaped_str.find('\\')
+    i = escaped_str.find("\\")
     if i == -1:
         return escaped_str
     else:
         head_str = escaped_str[:i]
-        tail_str = escaped_str[i+1:]
+        tail_str = escaped_str[i + 1 :]
         for k, v in ESCAPES.items():
             if tail_str.startswith(k):
-                return head_str + v + unescape(tail_str[len(k):])
+                return head_str + v + unescape(tail_str[len(k) :])
 
-        for prefix, digits in (('x', 2), ('u', 4), ('U', 8)):
+        for prefix, digits in (("x", 2), ("u", 4), ("U", 8)):
             if tail_str.startswith(prefix):
-                hex_str = tail_str[1:1 + digits]
+                hex_str = tail_str[1 : 1 + digits]
                 v = chr(int(hex_str, 16))
-                return head_str + v + unescape(tail_str[1 + digits:])
+                return head_str + v + unescape(tail_str[1 + digits :])
 
         raise ZishException(
-            "Can't find a valid string following the first backslash of '" +
-            escaped_str + "'.")
+            f"Can't find a valid string following the first backslash of "
+            f"'{escaped_str}'."
+        )
 
 
 def dumps(obj):
-    return _dump(obj, '')
+    return _dump(obj, "")
 
 
 def _dump(obj, indent):
     if isinstance(obj, Mapping):
-        new_indent = indent + '  '
-        items = []
-        for k, v in sorted(obj.items()):
-            items.append(
-                '\n' + new_indent + _dump(k, new_indent) + ': ' +
-                _dump(v, new_indent))
-        return '{' + ','.join(items) + '}'
+        new_indent = f"{indent}  "
+        b = "".join(
+            f"\n{new_indent}{_dump(k, new_indent)}: {_dump(v, new_indent)},"
+            for k, v in sorted(obj.items())
+        )
+        return "{}" if len(b) == 0 else "{" + b + "\n}"
     elif isinstance(obj, bool):
-        return 'true' if obj else 'false'
+        return "true" if obj else "false"
     elif isinstance(obj, (list, tuple)):
-        new_indent = indent + '  '
-        b = ','.join('\n' + new_indent + _dump(v, new_indent) for v in obj)
-        return '[' + b + ']'
+        new_indent = f"{indent}  "
+        b = "".join(f"\n{new_indent}{_dump(v, new_indent)}," for v in obj)
+
+        return "[]" if len(b) == 0 else f"[{b}\n{indent}]"
     elif isinstance(obj, (int, float, Decimal)):
         return str(obj)
     elif obj is None:
-        return 'null'
+        return "null"
     elif isinstance(obj, str):
         return QUOTE + obj + QUOTE
     elif isinstance(obj, (bytes, bytearray)):
-        return "'" + b64encode(obj).decode() + "'"
+        return f"'{b64encode(obj).decode()}'"
     elif isinstance(obj, Datetime):
         tzinfo = obj.tzinfo
         if tzinfo is None:
-            return obj.isoformat() + '-00:00'
+            return f"{obj.isoformat()}-00:00"
         elif tzinfo.utcoffset(obj) == Timezone.utc.utcoffset(obj):
             return obj.strftime(UTC_FORMAT)
         else:
             return obj.isoformat()
     else:
-        raise ZishException("Type " + str(type(obj)) + " not recognised.")
+        raise ZishException(f"Type {type(obj)} not recognised.")

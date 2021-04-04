@@ -103,3 +103,4 @@ ENV/
 *.swp
 
 README.html
+zish/antlr/*.jar

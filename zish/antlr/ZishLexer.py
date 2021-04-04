@@ -1,8 +1,12 @@
-# Generated from Zish.g4 by ANTLR 4.7
+# Generated from Zish.g4 by ANTLR 4.9.2
 from antlr4 import *
 from io import StringIO
-from typing.io import TextIO
 import sys
+
+if sys.version_info[1] > 5:
+    from typing import TextIO
+else:
+    from typing.io import TextIO
 
 
 def serializedATN():
@@ -13,8 +17,8 @@ def serializedATN():
         buf.write("\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23")
         buf.write("\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30")
         buf.write("\4\31\t\31\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36")
-        buf.write("\t\36\4\37\t\37\4 \t \4!\t!\4\"\t\"\4#\t#\4$\t$\4%\t%")
-        buf.write("\4&\t&\4\'\t\'\4(\t(\3\2\3\2\3\3\3\3\3\4\3\4\3\5\3\5\3")
+        buf.write('\t\36\4\37\t\37\4 \t \4!\t!\4"\t"\4#\t#\4$\t$\4%\t%')
+        buf.write("\4&\t&\4'\t'\4(\t(\3\2\3\2\3\3\3\3\3\4\3\4\3\5\3\5\3")
         buf.write("\6\3\6\3\7\3\7\3\b\6\b_\n\b\r\b\16\b`\3\b\5\bd\n\b\3\b")
         buf.write("\3\b\3\t\3\t\3\t\3\t\7\tl\n\t\f\t\16\to\13\t\3\t\3\t\3")
         buf.write("\t\3\n\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3")
@@ -44,25 +48,25 @@ def serializedATN():
         buf.write("\3\35\3\35\7\35\u0147\n\35\f\35\16\35\u014a\13\35\3\35")
         buf.write("\3\35\7\35\u014e\n\35\f\35\16\35\u0151\13\35\3\35\3\35")
         buf.write("\3\36\3\36\3\37\3\37\7\37\u0159\n\37\f\37\16\37\u015c")
-        buf.write("\13\37\3 \3 \3!\3!\3\"\3\"\3\"\3#\3#\5#\u0167\n#\3$\3")
+        buf.write('\13\37\3 \3 \3!\3!\3"\3"\3"\3#\3#\5#\u0167\n#\3$\3')
         buf.write("$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3")
-        buf.write("$\3$\5$\u017e\n$\3%\3%\3%\3%\3%\3&\3&\3\'\3\'\3(\3(\3")
+        buf.write("$\3$\5$\u017e\n$\3%\3%\3%\3%\3%\3&\3&\3'\3'\3(\3(\3")
         buf.write("(\3(\5(\u018d\n(\4m\u00f3\2)\3\3\5\4\7\5\t\6\13\7\r\b")
         buf.write("\17\t\21\2\23\n\25\13\27\f\31\2\33\2\35\2\37\2!\2#\2%")
-        buf.write("\2\'\r)\16+\2-\2/\17\61\20\63\2\65\2\67\29\2;\2=\2?\2")
+        buf.write("\2'\r)\16+\2-\2/\17\61\20\63\2\65\2\67\29\2;\2=\2?\2")
         buf.write("A\2C\2E\2G\2I\2K\2M\2O\2\3\2\23\4\2VVvv\3\2\63;\3\2\62")
         buf.write("\64\3\2\63\64\3\2\62\63\4\2\\\\||\3\2\62\65\3\2\62\67")
         buf.write("\4\2GGgg\4\2$$^^\6\2--\61;C\\c|\3\2\62;\4\2--//\13\2$")
-        buf.write("$\61\61^^cdhhppttvvxx\5\2\62;CHch\4\2\13\17\"\"\4\2\u0087")
+        buf.write('$\61\61^^cdhhppttvvxx\5\2\62;CHch\4\2\13\17""\4\2\u0087')
         buf.write("\u0087\u202a\u202b\2\u01a0\2\3\3\2\2\2\2\5\3\2\2\2\2\7")
         buf.write("\3\2\2\2\2\t\3\2\2\2\2\13\3\2\2\2\2\r\3\2\2\2\2\17\3\2")
-        buf.write("\2\2\2\23\3\2\2\2\2\25\3\2\2\2\2\27\3\2\2\2\2\'\3\2\2")
+        buf.write("\2\2\2\23\3\2\2\2\2\25\3\2\2\2\2\27\3\2\2\2\2'\3\2\2")
         buf.write("\2\2)\3\2\2\2\2/\3\2\2\2\2\61\3\2\2\2\3Q\3\2\2\2\5S\3")
         buf.write("\2\2\2\7U\3\2\2\2\tW\3\2\2\2\13Y\3\2\2\2\r[\3\2\2\2\17")
         buf.write("c\3\2\2\2\21g\3\2\2\2\23s\3\2\2\2\25\u0081\3\2\2\2\27")
         buf.write("\u0083\3\2\2\2\31\u0090\3\2\2\2\33\u0099\3\2\2\2\35\u00a1")
         buf.write("\3\2\2\2\37\u00a9\3\2\2\2!\u00af\3\2\2\2#\u00b1\3\2\2")
-        buf.write("\2%\u00b4\3\2\2\2\'\u00be\3\2\2\2)\u00d5\3\2\2\2+\u00d8")
+        buf.write("\2%\u00b4\3\2\2\2'\u00be\3\2\2\2)\u00d5\3\2\2\2+\u00d8")
         buf.write("\3\2\2\2-\u00e4\3\2\2\2/\u00ed\3\2\2\2\61\u00f8\3\2\2")
         buf.write("\2\63\u010d\3\2\2\2\65\u010f\3\2\2\2\67\u0126\3\2\2\2")
         buf.write("9\u013d\3\2\2\2;\u0154\3\2\2\2=\u0156\3\2\2\2?\u015d\3")
@@ -70,7 +74,7 @@ def serializedATN():
         buf.write("\3\2\2\2I\u017f\3\2\2\2K\u0184\3\2\2\2M\u0186\3\2\2\2")
         buf.write("O\u018c\3\2\2\2QR\7]\2\2R\4\3\2\2\2ST\7_\2\2T\6\3\2\2")
         buf.write("\2UV\7.\2\2V\b\3\2\2\2WX\7}\2\2X\n\3\2\2\2YZ\7\177\2\2")
-        buf.write("Z\f\3\2\2\2[\\\7<\2\2\\\16\3\2\2\2]_\5M\'\2^]\3\2\2\2")
+        buf.write("Z\f\3\2\2\2[\\\7<\2\2\\\16\3\2\2\2]_\5M'\2^]\3\2\2\2")
         buf.write("_`\3\2\2\2`^\3\2\2\2`a\3\2\2\2ad\3\2\2\2bd\5\21\t\2c^")
         buf.write("\3\2\2\2cb\3\2\2\2de\3\2\2\2ef\b\b\2\2f\20\3\2\2\2gh\7")
         buf.write("\61\2\2hi\7,\2\2im\3\2\2\2jl\13\2\2\2kj\3\2\2\2lo\3\2")
@@ -97,7 +101,7 @@ def serializedATN():
         buf.write("\u00a9\u00a4\3\2\2\2\u00aa \3\2\2\2\u00ab\u00ac\t\6\2")
         buf.write("\2\u00ac\u00b0\5? \2\u00ad\u00ae\7\64\2\2\u00ae\u00b0")
         buf.write("\t\b\2\2\u00af\u00ab\3\2\2\2\u00af\u00ad\3\2\2\2\u00b0")
-        buf.write("\"\3\2\2\2\u00b1\u00b2\t\t\2\2\u00b2\u00b3\5? \2\u00b3")
+        buf.write('"\3\2\2\2\u00b1\u00b2\t\t\2\2\u00b2\u00b3\5? \2\u00b3')
         buf.write("$\3\2\2\2\u00b4\u00b5\t\t\2\2\u00b5\u00bc\5? \2\u00b6")
         buf.write("\u00b8\7\60\2\2\u00b7\u00b9\5? \2\u00b8\u00b7\3\2\2\2")
         buf.write("\u00b9\u00ba\3\2\2\2\u00ba\u00b8\3\2\2\2\u00ba\u00bb\3")
@@ -123,46 +127,46 @@ def serializedATN():
         buf.write("\2\2\2\u00e7\u00e9\3\2\2\2\u00e8\u00ea\5? \2\u00e9\u00e8")
         buf.write("\3\2\2\2\u00ea\u00eb\3\2\2\2\u00eb\u00e9\3\2\2\2\u00eb")
         buf.write("\u00ec\3\2\2\2\u00ec.\3\2\2\2\u00ed\u00f3\7$\2\2\u00ee")
-        buf.write("\u00f2\5C\"\2\u00ef\u00f2\5G$\2\u00f0\u00f2\n\13\2\2\u00f1")
+        buf.write('\u00f2\5C"\2\u00ef\u00f2\5G$\2\u00f0\u00f2\n\13\2\2\u00f1')
         buf.write("\u00ee\3\2\2\2\u00f1\u00ef\3\2\2\2\u00f1\u00f0\3\2\2\2")
         buf.write("\u00f2\u00f5\3\2\2\2\u00f3\u00f4\3\2\2\2\u00f3\u00f1\3")
         buf.write("\2\2\2\u00f4\u00f6\3\2\2\2\u00f5\u00f3\3\2\2\2\u00f6\u00f7")
         buf.write("\7$\2\2\u00f7\60\3\2\2\2\u00f8\u00fd\7)\2\2\u00f9\u00fc")
-        buf.write("\5\65\33\2\u00fa\u00fc\5M\'\2\u00fb\u00f9\3\2\2\2\u00fb")
+        buf.write("\5\65\33\2\u00fa\u00fc\5M'\2\u00fb\u00f9\3\2\2\2\u00fb")
         buf.write("\u00fa\3\2\2\2\u00fc\u00ff\3\2\2\2\u00fd\u00fb\3\2\2\2")
         buf.write("\u00fd\u00fe\3\2\2\2\u00fe\u0101\3\2\2\2\u00ff\u00fd\3")
         buf.write("\2\2\2\u0100\u0102\5\63\32\2\u0101\u0100\3\2\2\2\u0101")
-        buf.write("\u0102\3\2\2\2\u0102\u0106\3\2\2\2\u0103\u0105\5M\'\2")
+        buf.write("\u0102\3\2\2\2\u0102\u0106\3\2\2\2\u0103\u0105\5M'\2")
         buf.write("\u0104\u0103\3\2\2\2\u0105\u0108\3\2\2\2\u0106\u0104\3")
         buf.write("\2\2\2\u0106\u0107\3\2\2\2\u0107\u0109\3\2\2\2\u0108\u0106")
         buf.write("\3\2\2\2\u0109\u010a\7)\2\2\u010a\62\3\2\2\2\u010b\u010e")
         buf.write("\5\67\34\2\u010c\u010e\59\35\2\u010d\u010b\3\2\2\2\u010d")
         buf.write("\u010c\3\2\2\2\u010e\64\3\2\2\2\u010f\u0113\5;\36\2\u0110")
-        buf.write("\u0112\5M\'\2\u0111\u0110\3\2\2\2\u0112\u0115\3\2\2\2")
+        buf.write("\u0112\5M'\2\u0111\u0110\3\2\2\2\u0112\u0115\3\2\2\2")
         buf.write("\u0113\u0111\3\2\2\2\u0113\u0114\3\2\2\2\u0114\u0116\3")
         buf.write("\2\2\2\u0115\u0113\3\2\2\2\u0116\u011a\5;\36\2\u0117\u0119")
-        buf.write("\5M\'\2\u0118\u0117\3\2\2\2\u0119\u011c\3\2\2\2\u011a")
+        buf.write("\5M'\2\u0118\u0117\3\2\2\2\u0119\u011c\3\2\2\2\u011a")
         buf.write("\u0118\3\2\2\2\u011a\u011b\3\2\2\2\u011b\u011d\3\2\2\2")
         buf.write("\u011c\u011a\3\2\2\2\u011d\u0121\5;\36\2\u011e\u0120\5")
-        buf.write("M\'\2\u011f\u011e\3\2\2\2\u0120\u0123\3\2\2\2\u0121\u011f")
+        buf.write("M'\2\u011f\u011e\3\2\2\2\u0120\u0123\3\2\2\2\u0121\u011f")
         buf.write("\3\2\2\2\u0121\u0122\3\2\2\2\u0122\u0124\3\2\2\2\u0123")
         buf.write("\u0121\3\2\2\2\u0124\u0125\5;\36\2\u0125\66\3\2\2\2\u0126")
-        buf.write("\u012a\5;\36\2\u0127\u0129\5M\'\2\u0128\u0127\3\2\2\2")
+        buf.write("\u012a\5;\36\2\u0127\u0129\5M'\2\u0128\u0127\3\2\2\2")
         buf.write("\u0129\u012c\3\2\2\2\u012a\u0128\3\2\2\2\u012a\u012b\3")
         buf.write("\2\2\2\u012b\u012d\3\2\2\2\u012c\u012a\3\2\2\2\u012d\u0131")
-        buf.write("\5;\36\2\u012e\u0130\5M\'\2\u012f\u012e\3\2\2\2\u0130")
+        buf.write("\5;\36\2\u012e\u0130\5M'\2\u012f\u012e\3\2\2\2\u0130")
         buf.write("\u0133\3\2\2\2\u0131\u012f\3\2\2\2\u0131\u0132\3\2\2\2")
         buf.write("\u0132\u0134\3\2\2\2\u0133\u0131\3\2\2\2\u0134\u0138\5")
-        buf.write(";\36\2\u0135\u0137\5M\'\2\u0136\u0135\3\2\2\2\u0137\u013a")
+        buf.write(";\36\2\u0135\u0137\5M'\2\u0136\u0135\3\2\2\2\u0137\u013a")
         buf.write("\3\2\2\2\u0138\u0136\3\2\2\2\u0138\u0139\3\2\2\2\u0139")
         buf.write("\u013b\3\2\2\2\u013a\u0138\3\2\2\2\u013b\u013c\7?\2\2")
-        buf.write("\u013c8\3\2\2\2\u013d\u0141\5;\36\2\u013e\u0140\5M\'\2")
+        buf.write("\u013c8\3\2\2\2\u013d\u0141\5;\36\2\u013e\u0140\5M'\2")
         buf.write("\u013f\u013e\3\2\2\2\u0140\u0143\3\2\2\2\u0141\u013f\3")
         buf.write("\2\2\2\u0141\u0142\3\2\2\2\u0142\u0144\3\2\2\2\u0143\u0141")
-        buf.write("\3\2\2\2\u0144\u0148\5;\36\2\u0145\u0147\5M\'\2\u0146")
+        buf.write("\3\2\2\2\u0144\u0148\5;\36\2\u0145\u0147\5M'\2\u0146")
         buf.write("\u0145\3\2\2\2\u0147\u014a\3\2\2\2\u0148\u0146\3\2\2\2")
         buf.write("\u0148\u0149\3\2\2\2\u0149\u014b\3\2\2\2\u014a\u0148\3")
-        buf.write("\2\2\2\u014b\u014f\7?\2\2\u014c\u014e\5M\'\2\u014d\u014c")
+        buf.write("\2\2\2\u014b\u014f\7?\2\2\u014c\u014e\5M'\2\u014d\u014c")
         buf.write("\3\2\2\2\u014e\u0151\3\2\2\2\u014f\u014d\3\2\2\2\u014f")
         buf.write("\u0150\3\2\2\2\u0150\u0152\3\2\2\2\u0151\u014f\3\2\2\2")
         buf.write("\u0152\u0153\7?\2\2\u0153:\3\2\2\2\u0154\u0155\t\f\2\2")
@@ -199,7 +203,7 @@ class ZishLexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
+    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
 
     LIST_START = 1
     LIST_FINISH = 2
@@ -216,34 +220,79 @@ class ZishLexer(Lexer):
     STRING = 13
     BLOB = 14
 
-    channelNames = [ u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN" ]
+    channelNames = [u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN"]
 
-    modeNames = [ "DEFAULT_MODE" ]
+    modeNames = ["DEFAULT_MODE"]
 
-    literalNames = [ "<INVALID>",
-            "'['", "']'", "','", "'{'", "'}'", "':'", "'null'" ]
+    literalNames = ["<INVALID>", "'['", "']'", "','", "'{'", "'}'", "':'", "'null'"]
 
-    symbolicNames = [ "<INVALID>",
-            "LIST_START", "LIST_FINISH", "COMMA", "MAP_START", "MAP_FINISH", 
-            "COLON", "WS", "NULL", "BOOL", "TIMESTAMP", "INTEGER", "DECIMAL", 
-            "STRING", "BLOB" ]
+    symbolicNames = [
+        "<INVALID>",
+        "LIST_START",
+        "LIST_FINISH",
+        "COMMA",
+        "MAP_START",
+        "MAP_FINISH",
+        "COLON",
+        "WS",
+        "NULL",
+        "BOOL",
+        "TIMESTAMP",
+        "INTEGER",
+        "DECIMAL",
+        "STRING",
+        "BLOB",
+    ]
 
-    ruleNames = [ "LIST_START", "LIST_FINISH", "COMMA", "MAP_START", "MAP_FINISH", 
-                  "COLON", "WS", "BLOCK_COMMENT", "NULL", "BOOL", "TIMESTAMP", 
-                  "YEAR", "MONTH", "DAY", "OFFSET", "HOUR", "MINUTE", "SECOND", 
-                  "INTEGER", "DECIMAL", "INT", "EXP", "STRING", "BLOB", 
-                  "BASE_64_PAD", "BASE_64_QUARTET", "BASE_64_PAD1", "BASE_64_PAD2", 
-                  "BASE_64_CHAR", "FRAC", "DIGIT", "PLUS_OR_MINUS", "COMMON_ESCAPE", 
-                  "COMMON_ESCAPE_CODE", "UNICODE_ESCAPE", "HEX_DIGIT_QUARTET", 
-                  "HEX_DIGIT", "SPACE", "EOL" ]
+    ruleNames = [
+        "LIST_START",
+        "LIST_FINISH",
+        "COMMA",
+        "MAP_START",
+        "MAP_FINISH",
+        "COLON",
+        "WS",
+        "BLOCK_COMMENT",
+        "NULL",
+        "BOOL",
+        "TIMESTAMP",
+        "YEAR",
+        "MONTH",
+        "DAY",
+        "OFFSET",
+        "HOUR",
+        "MINUTE",
+        "SECOND",
+        "INTEGER",
+        "DECIMAL",
+        "INT",
+        "EXP",
+        "STRING",
+        "BLOB",
+        "BASE_64_PAD",
+        "BASE_64_QUARTET",
+        "BASE_64_PAD1",
+        "BASE_64_PAD2",
+        "BASE_64_CHAR",
+        "FRAC",
+        "DIGIT",
+        "PLUS_OR_MINUS",
+        "COMMON_ESCAPE",
+        "COMMON_ESCAPE_CODE",
+        "UNICODE_ESCAPE",
+        "HEX_DIGIT_QUARTET",
+        "HEX_DIGIT",
+        "SPACE",
+        "EOL",
+    ]
 
     grammarFileName = "Zish.g4"
 
-    def __init__(self, input=None, output:TextIO = sys.stdout):
+    def __init__(self, input=None, output: TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.7")
-        self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
+        self.checkVersion("4.9.2")
+        self._interp = LexerATNSimulator(
+            self, self.atn, self.decisionsToDFA, PredictionContextCache()
+        )
         self._actions = None
         self._predicates = None
-
-

@@ -5,15 +5,14 @@ A Python 3 library for the https://github.com/tlocke/zish[Zish] format,
 released under the
 https://github.com/tlocke/zish_python_antlr/blob/master/LICENSE[MIT Licence].
 
-image:https://travis-ci.org/tlocke/zish_python_antlr.svg?branch=master["Build
-Status", link="https://travis-ci.org/tlocke/zish"]
+image::https://github.com/tlocke/zish/workflows/zish/badge.svg[Build Status]
 
 
 === Installation
 
 It's a good idea to set up a virtualenv:
 
- virtualenv venv
+ python3 -m venv venv
  source venv/bin/activate
 
 then install Zish with pip:
@@ -41,7 +40,12 @@ Zish string to a Python object use `zish.loads`. Eg.
 ...     'price': Decimal('7.99'),
 ...     'weight': 6.88,
 ...     'key': b'kshhgrl',
-...     'tags': ['russian', 'novel', '19th century']}
+...     'tags': [
+...       'russian',
+...       'novel',
+...       '19th century',
+...     ],
+... }
 >>>
 >>> # Output it as an Zish string
 >>> zish_str = dumps(book)
@@ -55,10 +59,12 @@ Zish string to a Python object use `zish.loads`. Eg.
   "tags": [
     "russian",
     "novel",
-    "19th century"],
+    "19th century",
+  ],
   "title": "A Hero of Our Time",
   "weight": 6.88,
-  "would_recommend": true}
+  "would_recommend": true,
+}
 >>>
 >>> # Load the Zish string, to give us back the Python object
 >>> reloaded_book = loads(zish_str)
@@ -100,6 +106,38 @@ A Hero of Our Time
 | list, tuple
 | list
 |===
+
+
+=== Contributing
+
+Useful link:
+
+* http://www.antlr.org/api/Java/index.html?overview-summary.html[ANTLR JavaDocs]
+
+To run the tests:
+
+* Change to the `zish_python_antlr` directory: `cd zish_python_antlr`
+* Create a virtual environment: `python3 -m venv venv`
+* Activate the virtual environment: `source venv/bin/activate`
+* Install tox: `pip install tox`
+* Run tox: `tox`
+
+The core parser is created using https://github.com/antlr/antlr4[ANTLR] from
+the Zish grammar. To create the parser files, go to the `zish/antlr` directory
+and download the ANTLR jar and then run the following command:
+
+ java -jar antlr-4.9.2-complete.jar -Dlanguage=Python3 Zish.g4
+
+
+==== Making A New Release
+
+Run `tox` to make sure all tests pass, then update the `Release Notes` section
+then do:
+
+....
+git tag -a x.y.z -m "version x.y.z"
+python setup.py sdist bdist_wheel upload --sign
+....
 
 
 === Release Notes
@@ -172,35 +210,3 @@ A Hero of Our Time
 ==== Version 0.0.0 (2017-08-01)
 
 * First public release. Passes all the tests.
-
-
-=== Contributing
-
-Useful links:
-
-* http://www.antlr.org/api/Java/index.html?overview-summary.html[ANTLR JavaDocs]
-
-To run the tests:
-
-* Change to the `zish_python_antlr` directory: `cd zish_python_antlr`
-* Create a virtual environment: `virtualenv --python=python3 venv`
-* Activate the virtual environment: `source venv/bin/activate`
-* Install tox: `pip install tox`
-* Run tox: `tox`
-
-The core parser is created using https://github.com/antlr/antlr4[ANTLR] from
-the Zish grammar. To create the parser files, go to the `antlr` directory and
-download the ANTLR jar and then run the following command:
-
- java -jar antlr-4.7-complete.jar -Dlanguage=Python3 Zish.g4
-
-
-==== Making A New Release
-
-Run `tox` to make sure all tests pass, then update the `Release Notes` section
-then do:
-
-....
-git tag -a x.y.z -m "version x.y.z"
-python setup.py sdist bdist_wheel upload --sign
-....

@@ -5,15 +5,14 @@ import versioneer
 
 
 setup(
-    name='zish_antlr',
+    name="zish_antlr",
     version=versioneer.get_version(),
-    description='A Python 3 library for the Zish format.',
-    author='Tony Locke',
-    author_email='tlocke@tlocke.org.uk',
-    url='https://github.com/tlocke/zish_python_antlr',
+    description="A Python 3 library for the Zish format.",
+    author="Tony Locke",
+    author_email="tlocke@tlocke.org.uk",
+    python_requires=">=3.6",
+    url="https://github.com/tlocke/zish_python_antlr",
     cmdclass=versioneer.get_cmdclass(),
-    packages=[
-        'zish', 'zish.antlr'],
-    install_requires=[
-        'antlr4-python3-runtime==4.7',
-        'arrow==0.10.0'])
+    packages=["zish", "zish.antlr"],
+    install_requires=["antlr4-python3-runtime==4.9.2", "arrow==0.10.0"],
+)
