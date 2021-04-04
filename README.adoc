@@ -136,11 +136,19 @@ then do:
 
 ....
 git tag -a x.y.z -m "version x.y.z"
-python setup.py sdist bdist_wheel upload --sign
+rm -r dist
+python setup.py sdist bdist_wheel --python-tag py3
+for f in dist/*; do gpg --detach-sign -a $f; done
+twine upload dist/*
 ....
 
 
 === Release Notes
+
+
+==== Version 0.0.13 (2021-04-04)
+
+* Trailing commas in list and maps are now allowed.
 
 
 ==== Version 0.0.12 (2017-09-07)
