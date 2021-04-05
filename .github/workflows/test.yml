@@ -1,4 +1,4 @@
-name: zish_antlr
+name: zish_python_antlr
 
 on: [push]
 
