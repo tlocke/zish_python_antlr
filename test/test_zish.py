@@ -1,10 +1,13 @@
-from zish import load, loads, ZishException, dump, dumps
-from io import StringIO
-from datetime import datetime as Datetime, timezone as Timezone, timedelta as Timedelta
-import pytest
-from decimal import Decimal
 from base64 import b64decode
+from datetime import datetime as Datetime, timedelta as Timedelta, timezone as Timezone
+from decimal import Decimal
+from io import StringIO
+
+import pytest
+
 import pytz
+
+from zish import ZishException, dump, dumps, load, loads
 
 
 def test_load():

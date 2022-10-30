@@ -1,14 +1,16 @@
-from antlr4 import CommonTokenStream, InputStream
-from antlr4.error import Errors, ErrorListener
-from antlr4.tree.Tree import TerminalNodeImpl
-from zish.antlr.ZishLexer import ZishLexer
-from zish.antlr.ZishParser import ZishParser
-import arrow
-from decimal import Decimal
 from base64 import b64decode, b64encode
 from collections.abc import Mapping
 from datetime import datetime as Datetime, timezone as Timezone
+from decimal import Decimal
 
+from antlr4 import CommonTokenStream, InputStream
+from antlr4.error import ErrorListener, Errors
+from antlr4.tree.Tree import TerminalNodeImpl
+
+import arrow
+
+from zish.antlr.ZishLexer import ZishLexer
+from zish.antlr.ZishParser import ZishParser
 
 QUOTE = '"'
 UTC_FORMAT = "%Y-%m-%dT%H:%M:%SZ"

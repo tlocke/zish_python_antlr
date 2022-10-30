@@ -1,7 +1,11 @@
-from zish.core import loads, load, dump, dumps, ZishException
-from ._version import get_versions
+from zish.core import ZishException, dump, dumps, load, loads
 
-__version__ = get_versions()["version"]
-del get_versions
+
+try:
+    from importlib.metadata import version
+except ImportError:
+    from importlib_metadata import version
+
+__version__ = version("zish_antlr")
 
 __all__ = [load, loads, dump, dumps, ZishException]
